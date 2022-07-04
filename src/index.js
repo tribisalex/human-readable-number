@@ -143,11 +143,13 @@ module.exports = function toReadable (number) {
         } else {
             return tens1 + ' ' + units1;
         }
+    } else if (tens === 0 && units === 0) {
+        return hundreds1;
     } else if (tens !== 0 && units === 0) {
         return hundreds1 + ' ' + tens1;
-    } else if (tens === 0) {
+    } else if (tens <= 1) {
         return hundreds1 + ' ' + units1;
-    } else  {
+    } else {
         return hundreds1 + ' ' + tens1 + ' ' + units1;
     }
 
